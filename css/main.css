@@ -1,5 +1,6 @@
 /* =========================================================
    Daily Hymns — Luminous / Glory Theme (FULL REWRITE)
+   + Refined typography (Inter + Fraunces)
    - 밝은 아이보리 배경 + 소프트 블루 + 은은한 골드 포인트
    - 기존 HTML 클래스 유지 (index/about/releases/playlist/contact 공통)
    ========================================================= */
@@ -9,6 +10,7 @@
   --bg: #f7f8fc;
   --surface: #ffffff;
   --surface-2: #f1f5ff;
+
   --text: #0f172a;
   --muted: #475569;
 
@@ -26,6 +28,10 @@
   --pill: 999px;
 
   --focus: 0 0 0 4px rgba(59, 130, 246, 0.22);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
 }
 
 /* ===== Base ===== */
@@ -41,8 +47,20 @@ body{
     radial-gradient(700px 420px at 15% 0%, rgba(240,200,112,0.18), transparent 60%),
     var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.7;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: inherit; }
+
+:focus-visible{
+  outline: none;
+  box-shadow: var(--focus);
+  border-radius: 10px;
 }
 
 /* ===== Layout ===== */
@@ -100,9 +118,9 @@ body{
 }
 
 .brand-mark{
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   opacity: 0.92;
 }
@@ -110,8 +128,8 @@ body{
 /* nav */
 .main-nav{
   display:flex;
-  gap: 14px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 13px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -123,15 +141,16 @@ body{
   text-decoration: none;
   color: rgba(255,255,255,0.92);
   border: 1px solid rgba(255,255,255,0.24);
-  background: rgba(15, 23, 42, 0.20);
+  background: rgba(15, 23, 42, 0.18);
   backdrop-filter: blur(10px);
   transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
-  opacity: 0.95;
+  opacity: 0.96;
+  font-weight: 500;
 }
 
 .main-nav a:hover{
   transform: translateY(-1px);
-  background: rgba(15, 23, 42, 0.30);
+  background: rgba(15, 23, 42, 0.26);
   border-color: rgba(255,255,255,0.34);
 }
 
@@ -147,46 +166,54 @@ body{
 }
 
 .header-main h1{
+  font-family: var(--font-serif);
   font-size: 54px;
+  font-weight: 600;
   margin: 0 0 8px;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.02em;
   text-shadow: 0 18px 44px rgba(2,6,23,0.55);
 }
 
 .header-main p{
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   opacity: 0.95;
   text-shadow: 0 10px 28px rgba(2,6,23,0.45);
+  font-weight: 400;
 }
 
 /* ===== Sections ===== */
 .section{ margin-top: 42px; }
 
 .section-label{
-  font-size: 12px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(71,85,105,0.85);
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .section-title{
+  font-family: var(--font-serif);
   font-size: 28px;
   margin: 0 0 10px;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
+  font-weight: 600;
 }
 
 .section-subtitle{
-  font-size: 15px;
+  font-size: 14px;
   color: var(--muted);
   margin: 0 0 20px;
+  font-weight: 400;
 }
 
 /* text blocks */
 .lead{
-  font-size: 17px;
+  font-size: 16px;
   color: rgba(15,23,42,0.80);
+  font-weight: 400;
 }
 
 /* ===== Buttons ===== */
@@ -203,14 +230,13 @@ body{
   justify-content:center;
   padding: 10px 18px;
   border-radius: var(--pill);
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   border: 1px solid transparent;
   transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   user-select: none;
+  font-weight: 600;
 }
-
-.btn:focus{ outline: none; box-shadow: var(--focus); }
 
 .btn-primary{
   background: linear-gradient(90deg, var(--gold), var(--blue));
@@ -221,7 +247,7 @@ body{
 .btn-primary:hover{ transform: translateY(-1px); }
 
 .btn-ghost{
-  background: rgba(255,255,255,0.70);
+  background: rgba(255,255,255,0.74);
   border-color: rgba(15,23,42,0.14);
   color: rgba(15,23,42,0.88);
 }
@@ -261,21 +287,28 @@ body{
 }
 
 .card-title{
-  font-size: 16px;
-  margin: 0 0 4px;
-  color: rgba(15,23,42,0.92);
+  font-family: var(--font-sans);
+  font-weight: 500;   /* lighter, refined */
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 6px 0 6px;
+  color: rgba(15,23,42,0.86);
 }
 
 .card-meta{
   font-size: 12px;
-  color: rgba(71,85,105,0.85);
+  color: rgba(71,85,105,0.78);
   margin-bottom: 10px;
+  font-weight: 400;
 }
 
-.card p{
-  font-size: 14px;
-  color: rgba(15,23,42,0.72);
-  margin-bottom: 14px;
+/* If you later add descriptions */
+.card p,
+.card .card-desc{
+  font-size: 13px;
+  color: rgba(71,85,105,0.85);
+  margin: 0 0 14px;
+  font-weight: 400;
 }
 
 /* ===== Badges / Chips ===== */
@@ -292,6 +325,7 @@ body{
   border: 1px solid rgba(59,130,246,0.18);
   color: rgba(15,23,42,0.80);
   background: rgba(96,165,250,0.14);
+  font-weight: 500;
 }
 
 /* ===== Embeds ===== */
@@ -313,8 +347,9 @@ body{
 
 .embed-box h3{
   margin: 4px 0 6px;
-  font-size: 16px;
+  font-size: 15px;
   color: rgba(15,23,42,0.90);
+  font-weight: 600;
 }
 
 .embed-box iframe{
@@ -340,7 +375,11 @@ body{
   box-shadow: var(--shadow);
 }
 
-.contact-card h3{ margin-top: 0; }
+.contact-card h3{
+  margin-top: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
 
 /* ===== Footer ===== */
 .site-footer{
@@ -367,9 +406,13 @@ body{
   .card-grid,
   .embed-grid,
   .contact-grid{ grid-template-columns: 1fr; }
+
+  .site-header{ height: 340px; }
 }
 
 @media (max-width: 720px){
   .header-inner{ padding: 20px 16px; }
   .header-main h1{ font-size: 36px; }
+  .main-nav{ gap: 10px; }
+  .main-nav a{ padding: 6px 10px; font-size: 12px; }
 }
