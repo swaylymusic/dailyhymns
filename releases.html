@@ -90,6 +90,7 @@
 <script>
 async function loadLatestVideos(limit = 12) {
   const container = document.getElementById("latest-release-grid");
+  if (!container) return;
 
   container.innerHTML = `<div class="card loading-card">Loading latest releases...</div>`;
 
@@ -121,7 +122,6 @@ async function loadLatestVideos(limit = 12) {
     console.error(error);
   }
 }
-
 loadLatestVideos(12);
 </script>
 
