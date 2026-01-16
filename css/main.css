@@ -477,3 +477,12 @@ a { color: inherit; }
   .main-nav{ gap: 10px; }
   .main-nav a{ padding: 6px 10px; font-size: 12px; }
 }
+
+/* Section label – Korean friendly */
+.section-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #9a7b4f;           /* 골드 톤 */
+  text-transform: none;    /* 한글은 uppercase 제거 */
+}
