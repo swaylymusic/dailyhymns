@@ -3,4 +3,4 @@ Allow: /
 Disallow: /?q=
 Disallow: /*?q=
 
-Sitemap: https://dailyhymnchannel.com/sitemap.xml
+Sitemap: https://dailyhymnschannel.com/sitemap.xml
